@@ -8,15 +8,16 @@ import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.neoforge.client.gui.ConfigurationScreen;
 import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
+
 @Mod(value = NarutoReborn.MODID, dist = Dist.CLIENT)
 @EventBusSubscriber(modid = NarutoReborn.MODID, value = Dist.CLIENT)
 public class NarutoRebornClient {
-    public NarutoRebornClient(ModContainer container) {
 
+    public NarutoRebornClient(ModContainer container) {
         container.registerExtensionPoint(IConfigScreenFactory.class, ConfigurationScreen::new);
     }
-
     @SubscribeEvent
-    static void onClientSetup(FMLClientSetupEvent event) {
+    public static void onClientSetup(FMLClientSetupEvent event) {
     }
+
 }
